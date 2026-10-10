@@ -1,12 +1,14 @@
 // utils/googleOAuth.js
 // Provides Google Identity Services (GIS) integration for authentic Google Sign-In
 
+const DEFAULT_GOOGLE_CLIENT_ID = '715819167597-sk0tgt9tsu05ckqicqt8oq8uv5potctc.apps.googleusercontent.com'
+
 export function getGoogleClientId() {
   const envId = import.meta.env.VITE_GOOGLE_CLIENT_ID
   if (envId && envId.trim() && !envId.includes('YOUR_GOOGLE_CLIENT_ID')) {
     return envId.trim()
   }
-  return localStorage.getItem('ss_google_client_id') || ''
+  return localStorage.getItem('ss_google_client_id') || DEFAULT_GOOGLE_CLIENT_ID
 }
 
 export function setGoogleClientId(clientId) {
