@@ -21,3 +21,6 @@ lerna-debug.log*
 # Environment variables
 .env.local
 .env.*.local
+
+# Zip archives
+*.zip
